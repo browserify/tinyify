@@ -14,7 +14,7 @@ a browserify plugin that runs various optimizations, so you don't have to instal
 [standard-url]: http://npm.im/standard
 
 ```bash
-npm install --saved-dev tinyify
+npm install --save-dev tinyify
 
 browserify -p tinyify app.js
 ```
