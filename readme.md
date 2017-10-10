@@ -6,10 +6,10 @@ a browserify plugin that runs various optimizations, so you don't have to instal
 [![travis][travis-image]][travis-url]
 [![standard][standard-image]][standard-url]
 
-[npm-image]: https://img.shields.io/npm/v/browserify-tiny.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/browserify-tiny
-[travis-image]: https://img.shields.io/travis/goto-bus-stop/browserify-tiny.svg?style=flat-square
-[travis-url]: https://travis-ci.org/goto-bus-stop/browserify-tiny
+[npm-image]: https://img.shields.io/npm/v/tinyify.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/tinyify
+[travis-image]: https://img.shields.io/travis/goto-bus-stop/tinyify.svg?style=flat-square
+[travis-url]: https://travis-ci.org/goto-bus-stop/tinyify
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://npm.im/standard
 
