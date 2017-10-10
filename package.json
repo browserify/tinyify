@@ -1,0 +1,37 @@
+{
+  "name": "tinyify",
+  "description": "a browserify plugin that runs various optimizations, so you don't have to install them all manually.",
+  "version": "0.0.0",
+  "author": "Renée Kooi <renee@kooi.me>",
+  "bugs": {
+    "url": "https://github.com/goto-bus-stop/tinyify/issues"
+  },
+  "dependencies": {
+    "browser-pack-flat": "^2.7.2",
+    "common-shakeify": "^0.4.1",
+    "envify": "^4.1.0",
+    "minify-stream": "^1.1.0",
+    "uglifyify": "^4.0.4",
+    "unassertify": "^2.0.4"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  },
+  "homepage": "https://github.com/goto-bus-stop/tinyify",
+  "keywords": [
+    "browserify",
+    "minify",
+    "optimize",
+    "tree-shaking",
+    "uglify"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goto-bus-stop/tinyify.git"
+  },
+  "scripts": {
+    "test": "standard"
+  }
+}
