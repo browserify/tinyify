@@ -6,6 +6,10 @@ var envify = require('envify/custom')
 var uglifyify = require('uglifyify')
 
 module.exports = function (b, opts) {
+  if (typeof b !== 'object') {
+    throw new Error('tinyify: must be used as a plugin, not a transform')
+  }
+
   var env = Object.assign({
     NODE_ENV: 'production'
   }, process.env)
