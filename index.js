@@ -10,9 +10,11 @@ module.exports = function (b, opts) {
     throw new Error('tinyify: must be used as a plugin, not a transform')
   }
 
+  opts = opts || {}
+
   var env = Object.assign({
     NODE_ENV: 'production'
-  }, process.env)
+  }, process.env, opts.env)
 
   // Remove `assert()` calls.
   b.transform(unassertify, { global: true })
