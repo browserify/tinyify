@@ -25,7 +25,10 @@ module.exports = function (b, opts) {
     global: true,
     toplevel: true,
     // No need to mangle here, will do that at the end.
-    mangle: false
+    mangle: false,
+    output: {
+      ascii_only: true
+    }
   })
 
   // Output a flat bundle, without function wrappers for each module.
@@ -34,7 +37,11 @@ module.exports = function (b, opts) {
   b.plugin(commonShake)
 
   // Minify the final output.
-  var uglifyOpts = {}
+  var uglifyOpts = {
+    output: {
+      ascii_only: true
+    }
+  }
   if (!b._options.debug) {
     uglifyOpts.sourceMap = false
   }
