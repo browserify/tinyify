@@ -1,7 +1,7 @@
 {
   "name": "tinyify",
   "description": "a browserify plugin that runs various optimizations, so you don't have to install them all manually.",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "author": "Renée Kooi <renee@kooi.me>",
   "bugs": {
     "url": "https://github.com/goto-bus-stop/tinyify/issues"
