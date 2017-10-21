@@ -10,7 +10,9 @@ module.exports = function (b, opts) {
     throw new Error('tinyify: must be used as a plugin, not a transform')
   }
 
-  opts = opts || {}
+  opts = Object.assign({
+    flat: true
+  }, opts)
 
   var env = Object.assign({
     NODE_ENV: 'production'
@@ -32,7 +34,10 @@ module.exports = function (b, opts) {
   })
 
   // Output a flat bundle, without function wrappers for each module.
-  b.plugin(packFlat)
+  if (opts.flat) {
+    b.plugin(packFlat)
+  }
+
   // Remove unused exports from modules.
   b.plugin(commonShake)
 
