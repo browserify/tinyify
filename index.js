@@ -45,6 +45,9 @@ module.exports = function (b, opts) {
   var uglifyOpts = {
     output: {
       ascii_only: true
+    },
+    mangle: {
+      safari10: true
     }
   }
   if (!b._options.debug) {
