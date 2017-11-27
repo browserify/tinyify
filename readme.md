@@ -8,8 +8,8 @@ a browserify plugin that runs various optimizations, so you don't have to instal
 
 [npm-image]: https://img.shields.io/npm/v/tinyify.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/tinyify
-[travis-image]: https://img.shields.io/travis/goto-bus-stop/tinyify.svg?style=flat-square
-[travis-url]: https://travis-ci.org/goto-bus-stop/tinyify
+[travis-image]: https://img.shields.io/travis/browserify/tinyify.svg?style=flat-square
+[travis-url]: https://travis-ci.org/browserify/tinyify
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://npm.im/standard
 
@@ -71,7 +71,7 @@ b.plugin('tinyify', { flat: false })
 [unassertify]: https://github.com/unassert-js/unassertify
 [envify]: https://github.com/hughsk/envify
 [uglifyify]: https://github.com/hughsk/uglifyify
-[common-shakeify]: https://github.com/goto-bus-stop/common-shakeify
+[common-shakeify]: https://github.com/browserify/common-shakeify
 [browser-pack-flat]: https://github.com/goto-bus-stop/browser-pack-flat
 [minify-stream]: https://github.com/goto-bus-stop/minify-stream
 [browser-pack]: https://github.com/browserify/browser-pack

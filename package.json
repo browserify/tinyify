@@ -4,7 +4,7 @@
   "version": "2.3.0",
   "author": "Renée Kooi <renee@kooi.me>",
   "bugs": {
-    "url": "https://github.com/goto-bus-stop/tinyify/issues"
+    "url": "https://github.com/browserify/tinyify/issues"
   },
   "dependencies": {
     "browser-pack-flat": "^3.0.0",
@@ -17,7 +17,7 @@
   "devDependencies": {
     "standard": "^10.0.3"
   },
-  "homepage": "https://github.com/goto-bus-stop/tinyify",
+  "homepage": "https://github.com/browserify/tinyify",
   "keywords": [
     "browserify",
     "minify",
@@ -29,7 +29,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/goto-bus-stop/tinyify.git"
+    "url": "https://github.com/browserify/tinyify.git"
   },
   "scripts": {
     "test": "standard"
