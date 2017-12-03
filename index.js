@@ -1,4 +1,5 @@
 var packFlat = require('browser-pack-flat/plugin')
+var collapser = require('bundle-collapser/plugin')
 var packFlatStream = require('browser-pack-flat')
 var commonShake = require('common-shakeify')
 var unassertify = require('unassertify')
@@ -50,9 +51,14 @@ module.exports = function (b, opts) {
     }
   })
 
-  // Output a flat bundle, without function wrappers for each module.
-  if (opts.flat) {
-    b.plugin(packFlat)
+  if (!b._options.fullPaths) {
+    if (opts.flat) {
+      // Output a flat bundle, without function wrappers for each module.
+      b.plugin(packFlat)
+    } else {
+      // Replace file paths in require() calls with module IDs.
+      b.plugin(collapser)
+    }
   }
 
   // Remove unused exports from modules.
