@@ -26,7 +26,11 @@ browserify -p tinyify app.js
  - [uglifyify][] - Remove dead code from modules
  - [common-shakeify][] - Remove unused exports from modules
  - [browser-pack-flat][] - Output a "flat" bundle, with all modules in a single scope
+ - [bundle-collapser][] - When using the `--no-flat` option, bundle-collapser replaces file paths in `require()` calls with short module IDs
  - [minify-stream][] - Uglify the final bundle
+
+[browser-pack-flat][] and [bundle-collapser][] are both not used if the `--full-paths` option is passed to Browserify.
+This way you can still get all of tinyify's other optimizations when building for [disc][].
 
 ## Options
 
@@ -54,7 +58,7 @@ PUBLIC_PATH=https://mywebsite.surge.sh browserify app.js -p tinyify
 ### `--no-flat`, `flat: false`
 
 Disable [browser-pack-flat][].
-This is useful if you want to generate a [browser-pack][] style bundle, like required by [disc][] for example.
+This enables [bundle-collapser][] instead which will still shrink the output bundle a bit by replacing file paths with short module IDs.
 
 ```bash
 browserify app.js -p [ tinyify --no-flat ]
@@ -73,6 +77,7 @@ b.plugin('tinyify', { flat: false })
 [uglifyify]: https://github.com/hughsk/uglifyify
 [common-shakeify]: https://github.com/browserify/common-shakeify
 [browser-pack-flat]: https://github.com/goto-bus-stop/browser-pack-flat
+[bundle-collapser]: https://github.com/substack/bundle-collapser
 [minify-stream]: https://github.com/goto-bus-stop/minify-stream
 [browser-pack]: https://github.com/browserify/browser-pack
 [disc]: https://github.com/hughsk/disc
