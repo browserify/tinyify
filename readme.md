@@ -68,6 +68,36 @@ browserify app.js -p [ tinyify --no-flat ]
 b.plugin('tinyify', { flat: false })
 ```
 
+## More options?
+
+If you need further customisation, I recommend installing the tools separately instead:
+
+```bash
+npm install --save-dev unassertify envify uglifyify common-shakeify browser-pack-flat uglify-js
+browserify entry.js \
+  -g unassertify \
+  -g envify \
+  -g uglifyify \
+  -p common-shakeify \
+  -p browser-pack-flat/plugin \
+| uglifyjs -cm \
+> output.js
+```
+
+Or with the Node API:
+
+```js
+browserify('entry.js')
+    .transform('unassertify', { global: true })
+    .transform('envify', { global: true })
+    .transform('uglifyify', { global: true })
+    .plugin('common-shakeify')
+    .plugin('browser-pack-flat/plugin')
+    .bundle()
+    .pipe(require('minify-stream')())
+    .pipe(fs.createWriteStream('./output.js'))
+```
+
 ## License
 
 [Apache-2.0](./LICENSE.md)
