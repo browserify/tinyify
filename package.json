@@ -17,7 +17,7 @@
     "unassertify": "^2.1.1"
   },
   "devDependencies": {
-    "standard": "^10.0.3"
+    "standard": "^11.0.1"
   },
   "homepage": "https://github.com/browserify/tinyify",
   "keywords": [
