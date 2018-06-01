@@ -12,6 +12,7 @@
     "common-shakeify": "^0.4.6",
     "envify": "^4.1.0",
     "minify-stream": "^1.1.0",
+    "uglify-es": "^3.3.9",
     "uglifyify": "^5.0.0",
     "unassertify": "^2.1.1"
   },

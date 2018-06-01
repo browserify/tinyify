@@ -9,6 +9,7 @@ var uglifyify = require('uglifyify')
 
 function makeUglifyOptions (debug) {
   var uglifyOpts = {
+    uglify: require('uglify-es'),
     output: {
       ascii_only: true
     },
