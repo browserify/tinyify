@@ -98,6 +98,8 @@ browserify('entry.js')
     .pipe(fs.createWriteStream('./output.js'))
 ```
 
+Alternatively you can fork this repo and publish it on npm under a scope with your modifications.
+
 ## License
 
 [Apache-2.0](./LICENSE.md)
