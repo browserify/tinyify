@@ -94,7 +94,7 @@ browserify('entry.js')
     .plugin('common-shakeify')
     .plugin('browser-pack-flat/plugin')
     .bundle()
-    .pipe(require('minify-stream')())
+    .pipe(require('minify-stream')({ sourceMap: false }))
     .pipe(fs.createWriteStream('./output.js'))
 ```
 
