@@ -68,6 +68,22 @@ browserify app.js -p [ tinyify --no-flat ]
 b.plugin('tinyify', { flat: false })
 ```
 
+### `modulesOptions: {}`
+
+Options for modules сan be provided in the `modulesOptions` option as an object with one or more of the next keys:
+`packFlat`, `collapser`, `packFlatStream`, `commonShake`, `unassertify`, `uglify`, `envify`, `uglifyify`.
+
+Example:
+ 
+```js
+b.plugin('tinyify', {
+  // ...
+  modulesOptions: {
+    uglify: {output: {ascii_only: false}},
+  }
+})
+```
+
 ## More options?
 
 If you need further customisation, I recommend installing the tools separately instead:
