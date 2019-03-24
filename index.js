@@ -29,7 +29,11 @@ function makeModulesDefaultOpts (opts) {
 
     collapser: null,
 
-    packFlatStream: null,
+    packFlatStream: {
+      raw: true,
+      debug: opts.debug,
+      basedir: opts.basedir
+    },
 
     commonShake: null,
 
@@ -111,11 +115,7 @@ module.exports.applyToPipeline = function applyToPipeline (pipeline, opts) {
   opts = assignOptions(opts)
 
   if (opts.flat) {
-    pipeline.get('pack').splice(0, 1, packFlatStream({
-      raw: true,
-      debug: opts.debug,
-      basedir: opts.basedir
-    }))
+    pipeline.get('pack').splice(0, 1, packFlatStream(opts.modulesOptions.packFlatStream))
   }
 
   // Minify the final output.
