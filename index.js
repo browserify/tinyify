@@ -70,7 +70,7 @@ function assignOptions (opts, object) {
 
   // Reassign options for modules
   // (required for using options in makeModulesDefaultOpts)
-  const modulesDefaultOpts = makeModulesDefaultOpts(object, opts)
+  const modulesDefaultOpts = makeModulesDefaultOpts(opts)
   opts.modulesOptions = Object.assign(modulesDefaultOpts, opts.modulesOptions)
 
   return opts
