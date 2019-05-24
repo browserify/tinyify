@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.5.1
+* Update common-shakeify to 0.6.0, this should have no observable effects.
+
 ## 2.5.0
 * Update common-shakeify to 0.5.2+, which fixes a syntax error issue, and which can remove exported functions that are only used inside other unused exported functions.
 
