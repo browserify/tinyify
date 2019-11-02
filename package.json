@@ -19,7 +19,10 @@
     "unassertify": "^2.1.1"
   },
   "devDependencies": {
-    "standard": "^14.3.1"
+    "browserify": "^16.5.0",
+    "from2-string": "^1.1.0",
+    "standard": "^14.3.1",
+    "tape": "^4.11.0"
   },
   "homepage": "https://github.com/browserify/tinyify",
   "keywords": [
@@ -36,7 +39,7 @@
     "url": "https://github.com/browserify/tinyify.git"
   },
   "scripts": {
-    "test": "standard"
+    "test": "standard && node test"
   },
   "standard": {
     "ignore": [
