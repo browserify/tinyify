@@ -7,11 +7,14 @@
     "url": "https://github.com/browserify/tinyify/issues"
   },
   "dependencies": {
+    "acorn-node": "^1.8.2",
     "browser-pack-flat": "^3.0.9",
     "bundle-collapser": "^1.3.0",
     "common-shakeify": "^0.6.0",
-    "envify": "^4.1.0",
+    "dash-ast": "^1.0.0",
     "minify-stream": "^1.1.0",
+    "multisplice": "^1.0.0",
+    "through2": "^3.0.1",
     "uglifyify": "^5.0.0",
     "unassertify": "^2.1.1"
   },
@@ -34,5 +37,10 @@
   },
   "scripts": {
     "test": "standard"
+  },
+  "standard": {
+    "ignore": [
+      "private_modules/**"
+    ]
   }
 }
