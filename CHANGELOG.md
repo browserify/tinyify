@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.0
+* **breaking** Update terser. Tinyify now requires Node.js 6.
+* Use patched envify from npm as `@goto-bus-stop/envify`.
+
 ## 2.5.2
 * Use a patched version of envify with support for newer syntax features.
 
