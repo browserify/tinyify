@@ -89,7 +89,7 @@ Or with the Node API:
 ```js
 browserify('entry.js')
     .transform('unassertify', { global: true })
-    .transform('envify', { global: true })
+    .transform('@goto-bus-stop/envify', { global: true })
     .transform('uglifyify', { global: true })
     .plugin('common-shakeify')
     .plugin('browser-pack-flat/plugin')
