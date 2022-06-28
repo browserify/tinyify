@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.1.0
+* Update common-shakeify to 1.1.1, which adds the ability to set ecmaVersion (and sets default to 10) and removes side-effect-free modules that declare `sideEffects: false` in package.json from parse tree.
+
 ## 3.0.0
 * **breaking** Update terser. Tinyify now requires Node.js 6.
 * Use patched envify from npm as `@goto-bus-stop/envify`.
