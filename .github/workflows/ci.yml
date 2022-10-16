@@ -1,0 +1,36 @@
+name: Node CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [6.x, 8.x, 10.x, 12.x, 14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install
+      run: npm install
+    - name: npm test
+      run: npm run tests-only
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js LTS
+      uses: actions/setup-node@v3
+      with:
+        node-version: lts/*
+    - name: npm install
+      run: npm install
+    - name: npm run lint
+      run: npm run lint

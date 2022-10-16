@@ -40,6 +40,8 @@
     "url": "https://github.com/browserify/tinyify.git"
   },
   "scripts": {
-    "test": "standard && node test"
+    "lint": "standard",
+    "tests-only": "node test",
+    "test": "npm run lint && npm run tests-only"
   }
 }
