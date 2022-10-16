@@ -15,7 +15,7 @@
     "dash-ast": "^1.0.0",
     "minify-stream": "^2.0.1",
     "multisplice": "^1.0.0",
-    "through2": "^3.0.1",
+    "through2": "^4.0.2",
     "uglifyify": "^5.0.0",
     "unassertify": "^2.1.1"
   },
