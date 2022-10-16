@@ -21,7 +21,7 @@
     "browserify": "^17.0.0",
     "from2-string": "^1.1.0",
     "standard": "^17.0.0",
-    "tape": "^4.11.0"
+    "tape": "^5.6.1"
   },
   "homepage": "https://github.com/browserify/tinyify",
   "keywords": [
