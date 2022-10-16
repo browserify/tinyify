@@ -1,3 +1,5 @@
+'use strict'
+
 const packFlat = require('browser-pack-flat/plugin')
 const collapser = require('bundle-collapser/plugin')
 const packFlatStream = require('browser-pack-flat')

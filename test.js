@@ -1,3 +1,5 @@
+'use strict'
+
 const tinyify = require('.')
 const fromString = require('from2-string')
 const browserify = require('browserify')
