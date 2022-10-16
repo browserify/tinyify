@@ -5,7 +5,7 @@ var commonShake = require('common-shakeify')
 var unassertify = require('unassertify')
 var uglify = require('minify-stream')
 var envify = require('@browserify/envify/custom')
-var uglifyify = require('uglifyify')
+var uglifyify = require('@browserify/uglifyify')
 
 function makeUglifyOptions (debug) {
   var uglifyOpts = {

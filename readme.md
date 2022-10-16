@@ -22,8 +22,8 @@ browserify -p tinyify app.js
 ## Included
 
  - [unassertify][] - Remove `assert()` calls
- - [envify][] - Replace environment variables—by default, replaces `NODE_ENV` with `"production"`
- - [uglifyify][] - Remove dead code from modules
+ - [@browserify/envify][] - Replace environment variables—by default, replaces `NODE_ENV` with `"production"`
+ - [@browserify/uglifyify][] - Remove dead code from modules
  - [common-shakeify][] - Remove unused exports from modules
  - [browser-pack-flat][] - Output a "flat" bundle, with all modules in a single scope
  - [bundle-collapser][] - When using the `--no-flat` option, bundle-collapser replaces file paths in `require()` calls with short module IDs
@@ -38,7 +38,7 @@ Options can be provided on the command line using subarg syntax, or in a separat
 
 ### `env: {}`
 
-Supply custom environment variables for [envify][].
+Supply custom environment variables for [@browserify/envify][].
 
 ```js
 b.plugin('tinyify', {
@@ -73,14 +73,14 @@ b.plugin('tinyify', { flat: false })
 If you need further customisation, I recommend installing the tools separately instead:
 
 ```bash
-npm install --save-dev unassertify @browserify/envify uglifyify common-shakeify browser-pack-flat uglify-js
+npm install --save-dev unassertify @browserify/envify @browserify/uglifyify common-shakeify browser-pack-flat terser
 browserify entry.js \
   -g unassertify \
   -g @browserify/envify \
-  -g uglifyify \
+  -g @browserify/uglifyify \
   -p common-shakeify \
   -p browser-pack-flat/plugin \
-| uglifyjs -cm \
+| terser -cm \
 > output.js
 ```
 
@@ -90,7 +90,7 @@ Or with the Node API:
 browserify('entry.js')
     .transform('unassertify', { global: true })
     .transform('@browserify/envify', { global: true })
-    .transform('uglifyify', { global: true })
+    .transform('@browserify/uglifyify', { global: true })
     .plugin('common-shakeify')
     .plugin('browser-pack-flat/plugin')
     .bundle()
@@ -105,8 +105,8 @@ Alternatively you can fork this repo and publish it on npm under a scope with yo
 [Apache-2.0](./LICENSE.md)
 
 [unassertify]: https://github.com/unassert-js/unassertify
-[envify]: https://github.com/browserify/envify
-[uglifyify]: https://github.com/hughsk/uglifyify
+[@browserify/envify]: https://github.com/browserify/envify
+[@browserify/uglifyify]: https://github.com/browserify/uglifyify
 [common-shakeify]: https://github.com/browserify/common-shakeify
 [browser-pack-flat]: https://github.com/goto-bus-stop/browser-pack-flat
 [bundle-collapser]: https://github.com/substack/bundle-collapser
