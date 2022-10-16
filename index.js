@@ -1,15 +1,15 @@
-var packFlat = require('browser-pack-flat/plugin')
-var collapser = require('bundle-collapser/plugin')
-var packFlatStream = require('browser-pack-flat')
-var commonShake = require('common-shakeify')
-var unassertify = require('unassertify')
-var minifyStream = require('minify-stream')
-var envify = require('@browserify/envify/custom')
-var uglifyify = require('@browserify/uglifyify')
+const packFlat = require('browser-pack-flat/plugin')
+const collapser = require('bundle-collapser/plugin')
+const packFlatStream = require('browser-pack-flat')
+const commonShake = require('common-shakeify')
+const unassertify = require('unassertify')
+const minifyStream = require('minify-stream')
+const envify = require('@browserify/envify/custom')
+const uglifyify = require('@browserify/uglifyify')
 
 function getUglify () {
   // For older Node.js versions, fall back to an earlier `terser` version.
-  var uglify = null
+  let uglify = null
   try {
     Function('var a = async () => {}') // eslint-disable-line no-new-func
   } catch (_err) {
@@ -20,7 +20,7 @@ function getUglify () {
 }
 
 function makeUglifyOptions (debug) {
-  var uglifyOpts = {
+  const uglifyOpts = {
     uglify: getUglify(),
     output: {
       ascii_only: true
@@ -45,7 +45,7 @@ module.exports = function (b, opts) {
     env: {}
   }, opts)
 
-  var env = Object.assign({
+  const env = Object.assign({
     NODE_ENV: 'production'
   }, process.env, opts.env)
 
@@ -79,7 +79,7 @@ module.exports = function (b, opts) {
   b.plugin(commonShake)
 
   // Minify the final output.
-  var uglifyOpts = makeUglifyOptions(b._options.debug)
+  const uglifyOpts = makeUglifyOptions(b._options.debug)
   b.pipeline.get('pack').push(minifyStream(uglifyOpts))
 }
 
@@ -99,6 +99,6 @@ module.exports.applyToPipeline = function applyToPipeline (pipeline, opts) {
   }
 
   // Minify the final output.
-  var uglifyOpts = makeUglifyOptions(opts.debug)
+  const uglifyOpts = makeUglifyOptions(opts.debug)
   pipeline.get('pack').push(minifyStream(uglifyOpts))
 }

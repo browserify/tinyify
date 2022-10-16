@@ -1,11 +1,11 @@
-var tinyify = require('.')
-var fromString = require('from2-string')
-var browserify = require('browserify')
-var test = require('tape')
+const tinyify = require('.')
+const fromString = require('from2-string')
+const browserify = require('browserify')
+const test = require('tape')
 
 test('modern syntax with envify', function (t) {
   t.plan(3)
-  var source = 'const env = process.env.NODE_ENV\nvar a = {...b}\nconsole.log(env, a)'
+  const source = 'const env = process.env.NODE_ENV\nvar a = {...b}\nconsole.log(env, a)'
   browserify(fromString(source))
     .plugin(tinyify)
     .bundle(function (err, result) {
