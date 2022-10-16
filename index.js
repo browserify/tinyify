@@ -4,7 +4,7 @@ var packFlatStream = require('browser-pack-flat')
 var commonShake = require('common-shakeify')
 var unassertify = require('unassertify')
 var uglify = require('minify-stream')
-var envify = require('@goto-bus-stop/envify/custom')
+var envify = require('@browserify/envify/custom')
 var uglifyify = require('uglifyify')
 
 function makeUglifyOptions (debug) {

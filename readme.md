@@ -73,10 +73,10 @@ b.plugin('tinyify', { flat: false })
 If you need further customisation, I recommend installing the tools separately instead:
 
 ```bash
-npm install --save-dev unassertify envify uglifyify common-shakeify browser-pack-flat uglify-js
+npm install --save-dev unassertify @browserify/envify uglifyify common-shakeify browser-pack-flat uglify-js
 browserify entry.js \
   -g unassertify \
-  -g envify \
+  -g @browserify/envify \
   -g uglifyify \
   -p common-shakeify \
   -p browser-pack-flat/plugin \
@@ -89,7 +89,7 @@ Or with the Node API:
 ```js
 browserify('entry.js')
     .transform('unassertify', { global: true })
-    .transform('@goto-bus-stop/envify', { global: true })
+    .transform('@browserify/envify', { global: true })
     .transform('uglifyify', { global: true })
     .plugin('common-shakeify')
     .plugin('browser-pack-flat/plugin')
@@ -105,7 +105,7 @@ Alternatively you can fork this repo and publish it on npm under a scope with yo
 [Apache-2.0](./LICENSE.md)
 
 [unassertify]: https://github.com/unassert-js/unassertify
-[envify]: https://github.com/hughsk/envify
+[envify]: https://github.com/browserify/envify
 [uglifyify]: https://github.com/hughsk/uglifyify
 [common-shakeify]: https://github.com/browserify/common-shakeify
 [browser-pack-flat]: https://github.com/goto-bus-stop/browser-pack-flat
