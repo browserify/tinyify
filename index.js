@@ -3,12 +3,25 @@ var collapser = require('bundle-collapser/plugin')
 var packFlatStream = require('browser-pack-flat')
 var commonShake = require('common-shakeify')
 var unassertify = require('unassertify')
-var uglify = require('minify-stream')
+var minifyStream = require('minify-stream')
 var envify = require('@browserify/envify/custom')
 var uglifyify = require('@browserify/uglifyify')
 
+function getUglify () {
+  // For older Node.js versions, fall back to an earlier `terser` version.
+  var uglify = null
+  try {
+    Function('var a = async () => {}') // eslint-disable-line no-new-func
+  } catch (_err) {
+    uglify = require('terser')
+  }
+
+  return uglify
+}
+
 function makeUglifyOptions (debug) {
   var uglifyOpts = {
+    uglify: getUglify(),
     output: {
       ascii_only: true
     },
@@ -42,6 +55,7 @@ module.exports = function (b, opts) {
   b.transform(envify(env), { global: true })
   // Remove dead code.
   b.transform(uglifyify, {
+    uglify: getUglify(),
     global: true,
     toplevel: true,
     // No need to mangle here, will do that at the end.
@@ -66,7 +80,7 @@ module.exports = function (b, opts) {
 
   // Minify the final output.
   var uglifyOpts = makeUglifyOptions(b._options.debug)
-  b.pipeline.get('pack').push(uglify(uglifyOpts))
+  b.pipeline.get('pack').push(minifyStream(uglifyOpts))
 }
 
 module.exports.applyToPipeline = function applyToPipeline (pipeline, opts) {
@@ -86,5 +100,5 @@ module.exports.applyToPipeline = function applyToPipeline (pipeline, opts) {
 
   // Minify the final output.
   var uglifyOpts = makeUglifyOptions(opts.debug)
-  pipeline.get('pack').push(uglify(uglifyOpts))
+  pipeline.get('pack').push(minifyStream(uglifyOpts))
 }
