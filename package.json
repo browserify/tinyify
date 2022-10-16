@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@browserify/envify": "^6.0.0",
-    "acorn-node": "^1.8.2",
+    "acorn-node": "^2.0.1",
     "browser-pack-flat": "^3.0.9",
     "bundle-collapser": "^1.3.0",
     "common-shakeify": "^1.1.1",
