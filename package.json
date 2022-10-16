@@ -22,7 +22,7 @@
   "devDependencies": {
     "browserify": "^16.5.0",
     "from2-string": "^1.1.0",
-    "standard": "^14.3.1",
+    "standard": "^17.0.0",
     "tape": "^4.11.0"
   },
   "homepage": "https://github.com/browserify/tinyify",
