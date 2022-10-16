@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.0.0
+* Remove unused dependencies.
+* Update `unassertify` to 2.x.
+* Use `@browserify/envify`. It's the same as `@goto-bus-stop/envify`, just renamed.
+* Use `@browserify/uglifyify`, with support for more modern ES features.
+
 ## 3.1.0
 * Update common-shakeify to 1.1.1, which adds the ability to set ecmaVersion (and sets default to 10) and removes side-effect-free modules that declare `sideEffects: false` in package.json from parse tree.
 
