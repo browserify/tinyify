@@ -16,7 +16,7 @@
     "multisplice": "^1.0.0",
     "terser": "3.16.1",
     "through2": "^4.0.2",
-    "unassertify": "^2.1.1"
+    "unassertify": "^3.0.1"
   },
   "devDependencies": {
     "browserify": "^17.0.0",
