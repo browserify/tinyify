@@ -14,7 +14,7 @@
     "common-shakeify": "^1.1.1",
     "minify-stream": "^2.0.1",
     "multisplice": "^1.0.0",
-    "terser": "3.16.1",
+    "terser": "5.16.2",
     "through2": "^4.0.2",
     "unassertify": "^3.0.1"
   },
